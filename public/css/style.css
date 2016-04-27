@@ -1,7 +1,11 @@
 .header-item img {height: 40px; max-height: 40px;}
+
+table .jidlo-cena {text-align: right;}
+table .jidlo-alergeny {text-align: right; opacity: 0;}
+table tr:hover .jidlo-alergeny {opacity: 1;}
 @media screen and (min-width: 768px) {
     table .jidlo-nazev {width: 40%;}
-    table .jidlo-cena {width: 3em; text-align: right;}
+    table .jidlo-cena {width: 3em;}
     table .jidlo-cena:after {content: ",–";}
     table .jidlo-popis {padding-left: 1em;}
 }
