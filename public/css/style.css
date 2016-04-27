@@ -1,1 +1,5 @@
 .header-item img {height: 40px; max-height: 40px;}
+table .jidlo-nazev {width: 40%;}
+table .jidlo-cena {width: 3em; text-align: right;}
+table .jidlo-cena:after {content: ",–";}
+table .jidlo-popis {padding-left: 1em;}

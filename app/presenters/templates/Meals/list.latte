@@ -1,0 +1,22 @@
+{block content}
+
+<h1 class="title" n:block="title">Jídelní lístek</h1>
+
+<div class="content">
+	{foreach $days as $day => $jidelniListky}
+		<h3>{$day|date:'l n. j.'|cs}</h3>
+		{foreach $jidelniListky as $jidelniListek}
+			<h4>{$jidelniListek->restaurace->nazev} ({$jidelniListek->restaurace->kuchyne})</h4>
+
+			<table class="table">
+				<tr n:foreach="$jidelniListek->jidla as $jidlo">
+					<td class="jidlo-nazev">{$jidlo->nazev}</td>
+					<td class="jidlo-cena">{$jidlo->cena}</td>
+					<td class="jidlo-popis">{$jidlo->popis}</td>
+				</tr>
+			</table>
+
+
+		{/foreach}
+	{/foreach}
+</div>

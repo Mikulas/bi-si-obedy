@@ -36,7 +36,7 @@ services:
 	- App\Forms\FormFactory
 	- App\Forms\SignFormFactory
 	- App\Forms\RegistrationFormFactory(%domainsAllowedForRegistration%)
-#	- (%domainsAllowedForRegistration%)
+	- App\Services\JidelniListekAggregator
 
 extensions:
 	nextras.dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension

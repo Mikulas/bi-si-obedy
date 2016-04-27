@@ -23,11 +23,11 @@
 				<a class="header-item" n:href="//Homepage:">
 					<img src="{$basePath}/images/logo.svg" alt="Logo">
 				</a>
-				<a class="header-tab" href="#">
-					Tab
+				<a class="header-tab {ifCurrent //Restaurants:list}is-active{/ifCurrent}" n:href="//Restaurants:list">
+					Restaurace
 				</a>
-				<a class="header-tab is-active" href="#">
-					Active tab
+				<a class="header-tab {ifCurrent //Meals:list}is-active{/ifCurrent}" n:href="//Meals:list">
+					Jídelní lístek
 				</a>
 			</div>
 

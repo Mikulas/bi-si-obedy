@@ -18,6 +18,7 @@ class JidlaMapper extends Mapper
 	{
 		$ref = parent::createStorageReflection();
 		$ref->addMapping('id', 'jidloID');
+		$ref->addMapping('jidelniListek', 'jidelniListekID');
 		return $ref;
 	}
 

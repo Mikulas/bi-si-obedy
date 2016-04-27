@@ -5,6 +5,9 @@ namespace App\Model;
 use Nextras\Orm;
 
 
+/**
+ * @method Orm\Collection\ICollection|JidelniListek[] findUpcoming()
+ */
 class JidelniListkyRepository extends Repository
 {
 

@@ -1,0 +1,9 @@
+{block title}Restaurace{/block}
+{block content}
+
+<h1 class="title">Restaurace zapojené do projektu SI-Obědy</h1>
+
+<div class="content" n:foreach="$restaurants as $restaurant">
+	<h3>{$restaurant->nazev}</h3>
+	<p>{$restaurant->kuchyne}</p>
+</div>
