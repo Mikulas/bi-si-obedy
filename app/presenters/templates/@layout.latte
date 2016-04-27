@@ -7,8 +7,9 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>{ifset title}{include title|striptags} | {/ifset}Nette Sandbox</title>
+	<title>{ifset title}{include title|striptags} | {/ifset}SI-Obědy</title>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.0.23/css/bulma.min.css">
 	<link rel="stylesheet" href="{$basePath}/css/style.css">
 	<meta name="viewport" content="width=device-width">
 	{block head}{/block}
@@ -17,7 +18,58 @@
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
+	<header class="header">
+		<div class="container">
+			<!-- Left side -->
+			<div class="header-left">
+				<a class="header-item" href="#">
+					<img src="{$basePath}/images/logo.svg" alt="Logo">
+				</a>
+				<a class="header-tab" href="#">
+					Tab
+				</a>
+				<a class="header-tab is-active" href="#">
+					Active tab
+				</a>
+			</div>
+
+			<!-- Hamburger menu (on mobile) -->
+			<span class="header-toggle">
+			  <span></span>
+			  <span></span>
+			  <span></span>
+			</span>
+
+			<!-- Right side -->
+			<div class="header-right header-menu">
+			  <span class="header-item">
+				<a href="#">Nav item</a>
+			  </span>
+			  <span class="header-item">
+				<a href="#">Other nav item</a>
+			  </span>
+			  <span class="header-item">
+				<a class="button" href="#">Button</a>
+			  </span>
+			</div>
+		</div>
+	</header>
+
 	{include content}
+
+	<footer class="footer">
+		<div class="container">
+			<div class="content is-centered">
+				<p>
+					<strong>SI-Obědy</strong>, vypracováno v rámci předmětu BI-SI
+					<a href="https://fit.cvut.cz/">
+						Fakulta informačních technologií
+						České vysoké učení technické v Praze
+					</a>
+				</p>
+			</div>
+		</div>
+	</footer>
 
 	{block scripts}
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
