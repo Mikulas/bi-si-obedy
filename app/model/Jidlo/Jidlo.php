@@ -6,14 +6,14 @@ use Nextras\Orm\Relationships\ManyHasMany;
 
 
 /**
- * @property-read int $jidloID {primary}
+ * @property-read int $id {primary}
  * @property string $nazev
  * @property float $cena
  * @property string $popis
  *
  * @property ManyHasMany|Objednavka[] $objednavky {m:m Objednavka::$jidla}
- * @property ManyHasMany|JidelniListek[] $jidelniListky {m:m JidelniListek::$jidla}
- * @property ManyHasMany|Alergen[] $alergeny {m:m Alergen::$jidla}
+ * @property JidelniListek $jidelniListek {m:1 JidelniListek::$jidla}
+ * @property ManyHasMany|Alergen[] $alergeny {m:m Alergen::$jidla, isMain=true}
  */
 class Jidlo extends Entity
 {

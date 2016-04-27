@@ -6,7 +6,7 @@ use Nextras\Orm\Relationships\OneHasOne;
 
 
 /**
- * @property-read int $zamestnanecID {primary}
+ * @property-read int $id {primary}
  * @property string $email
  * @property string $jmeno
  * @property string $prijmeni
@@ -14,7 +14,7 @@ use Nextras\Orm\Relationships\OneHasOne;
  * @property int $telefon
  *
  * @property Pobocka $pobocka {m:1 Pobocka::$zamestnanci}
- * @property NULL|OneHasOne|UzivatelskyUcet $uzivatelskyUcet {1:1 UzivatelskyUcet::$zamestnanec}
+ * @property NULL|OneHasOne|UzivatelskyUcet $uzivatelskyUcet {1:1 UzivatelskyUcet::$zamestnanec, isMain=true}
  */
 class Zamestnanec extends Entity
 {

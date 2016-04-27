@@ -6,7 +6,7 @@ use DateTime;
 use Nextras\Orm\Relationships\OneHasMany;
 
 /**
- * @property-read int $pobockaID {primary}
+ * @property-read int $id {primary}
  * @property int $cisloPopisne
  * @property string $mesto
  * @property int $PSC

@@ -8,7 +8,7 @@ use Nextras\Orm\Relationships\OneHasOne;
 
 
 /**
- * @property-read int $uzivatelskyUcetID {primary}
+ * @property-read int $id {primary}
  * @property string $username
  * @property string $heslo
  * @property int $kredit

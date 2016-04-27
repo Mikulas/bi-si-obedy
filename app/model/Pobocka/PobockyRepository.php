@@ -16,7 +16,7 @@ class PobockyRepository extends Repository
 	public static function getEntityClassNames() : array
 	{
 		return [
-			Pobocky::class,
+			Pobocka::class,
 		];
 	}
 

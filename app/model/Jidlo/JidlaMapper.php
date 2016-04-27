@@ -13,4 +13,12 @@ class JidlaMapper extends Mapper
 		return 'Jidlo';
 	}
 
+
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'jidloID');
+		return $ref;
+	}
+
 }

@@ -7,7 +7,7 @@ use Nextras\Orm\Relationships\OneHasMany;
 
 
 /**
- * @property-read int $restauraceID {primary}
+ * @property-read int $id {primary}
  * @property string $adresa
  * @property NULL|string $email
  * @property int $ICO
@@ -16,7 +16,7 @@ use Nextras\Orm\Relationships\OneHasMany;
  * @property string $nazev
  * @property int $telefon
  *
- * @property OneHasMany|JidelniListek[] $jidelniListky {1:m JidelniListek:$restaurace}
+ * @property OneHasMany|JidelniListek[] $jidelniListky {1:m JidelniListek::$restaurace}
  */
 class Restaurace extends Entity
 {

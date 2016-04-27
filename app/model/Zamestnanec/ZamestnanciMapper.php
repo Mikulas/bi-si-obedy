@@ -13,4 +13,12 @@ class ZamestnanciMapper extends Mapper
 		return 'Zamestnanec';
 	}
 
+
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'zamestnanecID');
+		return $ref;
+	}
+
 }

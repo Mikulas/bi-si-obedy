@@ -13,4 +13,12 @@ class RestauraceMapper extends Mapper
 		return 'Restaurace';
 	}
 
+
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'restauraceID');
+		return $ref;
+	}
+
 }

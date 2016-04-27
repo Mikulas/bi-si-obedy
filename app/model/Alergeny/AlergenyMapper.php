@@ -13,4 +13,12 @@ class AlergenyMapper extends Mapper
 		return 'Alergeny';
 	}
 
+
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'alergenyID');
+		return $ref;
+	}
+
 }

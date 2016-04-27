@@ -13,4 +13,12 @@ class UzivatelskeUctyMapper extends Mapper
 		return 'UzivatelskyUcet';
 	}
 
+
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'uzivatelskyUcetID');
+		return $ref;
+	}
+
 }

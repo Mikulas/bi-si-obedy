@@ -13,4 +13,11 @@ class PobockyMapper extends Mapper
 		return 'Pobocka';
 	}
 
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'pobockaID');
+		return $ref;
+	}
+
 }

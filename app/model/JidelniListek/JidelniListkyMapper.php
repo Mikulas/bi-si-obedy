@@ -13,4 +13,11 @@ class JidelniListkyMapper extends Mapper
 		return 'JidelniListek';
 	}
 
+	protected function createStorageReflection()
+	{
+		$ref = parent::createStorageReflection();
+		$ref->addMapping('id', 'jidelniListekID');
+		return $ref;
+	}
+
 }
