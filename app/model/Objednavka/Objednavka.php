@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use DateTime;
+use Nextras\Orm\Relationships\ManyHasMany;
 
 
 /**
@@ -11,6 +12,9 @@ use DateTime;
  * @property DateTime $datumSplatnosti
  * @property DateTime $datumZadani
  * @property string $stavObjednavky
+ *
+ * @property UzivatelskyUcet $uzivatelskyUcet {m:1 UzivatelskyUcet::$objednavky}
+ * @property ManyHasMany|Jidlo[] $jidla {m:m Jidlo::$objednavky}
  */
 class Objednavka extends Entity
 {

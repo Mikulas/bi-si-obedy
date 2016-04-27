@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use DateTime;
+use Nextras\Orm\Relationships\OneHasMany;
 
 
 /**
@@ -14,6 +15,8 @@ use DateTime;
  * @property string $kuchyne
  * @property string $nazev
  * @property int $telefon
+ *
+ * @property OneHasMany|JidelniListek[] $jidelniListky {1:m JidelniListek:$restaurace}
  */
 class Restaurace extends Entity
 {

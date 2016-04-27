@@ -11,7 +11,6 @@ use Nextras\Orm;
  * @property-read JidlaRepository $jidla
  * @property-read ObjednavkyRepository $objednavky
  * @property-read PobockyRepository $pobocky
- * @property-read Repository $
  * @property-read RestauraceRepository $restaurace
  * @property-read UzivatelskeUctyRepository $uzivatelskeucty
  * @property-read ZamestnanciRepository $zamestnanci
