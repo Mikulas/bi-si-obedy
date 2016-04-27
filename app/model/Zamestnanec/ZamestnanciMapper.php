@@ -10,7 +10,7 @@ class ZamestnanciMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'Zamestnanec';
+		return 'zamestnanec';
 	}
 
 
@@ -18,6 +18,8 @@ class ZamestnanciMapper extends Mapper
 	{
 		$ref = parent::createStorageReflection();
 		$ref->addMapping('id', 'zamestnanecID');
+		$ref->addMapping('rodneCislo', 'rodneCislo');
+		$ref->addMapping('pobocka', 'pobockaID');
 		return $ref;
 	}
 

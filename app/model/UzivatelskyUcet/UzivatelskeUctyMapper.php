@@ -10,7 +10,7 @@ class UzivatelskeUctyMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'UzivatelskyUcet';
+		return 'uzivatelskyucet';
 	}
 
 
@@ -18,6 +18,7 @@ class UzivatelskeUctyMapper extends Mapper
 	{
 		$ref = parent::createStorageReflection();
 		$ref->addMapping('id', 'uzivatelskyUcetID');
+		$ref->addMapping('zamestnanec', 'zamestnanecID');
 		return $ref;
 	}
 

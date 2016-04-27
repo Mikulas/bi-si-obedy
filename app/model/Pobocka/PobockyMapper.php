@@ -10,7 +10,7 @@ class PobockyMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'Pobocka';
+		return 'pobocka';
 	}
 
 	protected function createStorageReflection()

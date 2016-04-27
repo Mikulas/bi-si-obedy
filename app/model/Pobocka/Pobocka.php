@@ -7,9 +7,9 @@ use Nextras\Orm\Relationships\OneHasMany;
 
 /**
  * @property-read int $id {primary}
- * @property int $cisloPopisne
+ * @property string $cisloPopisne
  * @property string $mesto
- * @property int $PSC
+ * @property string $PSC
  * @property string $ulice
  *
  * @property OneHasMany|Zamestnanec[] $zamestnanci {1:m Zamestnanec::$pobocka}

@@ -10,7 +10,7 @@ class RestauraceMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'Restaurace';
+		return 'restaurace';
 	}
 
 

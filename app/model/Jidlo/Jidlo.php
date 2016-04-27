@@ -8,7 +8,7 @@ use Nextras\Orm\Relationships\ManyHasMany;
 /**
  * @property-read int $id {primary}
  * @property string $nazev
- * @property float $cena
+ * @property int $cena
  * @property string $popis
  *
  * @property ManyHasMany|Objednavka[] $objednavky {m:m Objednavka::$jidla}

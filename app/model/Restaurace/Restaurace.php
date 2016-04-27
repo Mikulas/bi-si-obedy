@@ -10,11 +10,10 @@ use Nextras\Orm\Relationships\OneHasMany;
  * @property-read int $id {primary}
  * @property string $adresa
  * @property NULL|string $email
- * @property int $ICO
- * @-property int $ID
+ * @property string $ICO
  * @property string $kuchyne
  * @property string $nazev
- * @property int $telefon
+ * @property string $telefon
  *
  * @property OneHasMany|JidelniListek[] $jidelniListky {1:m JidelniListek::$restaurace}
  */

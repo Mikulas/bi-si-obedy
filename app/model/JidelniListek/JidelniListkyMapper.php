@@ -10,7 +10,7 @@ class JidelniListkyMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'JidelniListek';
+		return 'jidelnilistek';
 	}
 
 	protected function createStorageReflection()

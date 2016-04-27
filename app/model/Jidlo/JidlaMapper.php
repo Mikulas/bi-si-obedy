@@ -10,7 +10,7 @@ class JidlaMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'Jidlo';
+		return 'jidlo';
 	}
 
 
