@@ -14,8 +14,6 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		$this->orm->alergeny->findAll();
-
 		$this->template->anyVariable = 'any value';
 	}
 

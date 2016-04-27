@@ -10,7 +10,7 @@ class AlergenyMapper extends Mapper
 
 	public function getTableName() : string
 	{
-		return 'Alergeny';
+		return 'alergeny';
 	}
 
 
