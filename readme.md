@@ -21,6 +21,11 @@ install with
 composer install
 ```
 
+Update database with
+```
+php public/index.php migrations:continue
+```
+
 Nette Sandbox
 =============
 
