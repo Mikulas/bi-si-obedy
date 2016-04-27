@@ -13,6 +13,9 @@
 					<td class="jidlo-nazev">{$jidlo->nazev}</td>
 					<td class="jidlo-cena">{$jidlo->cena}</td>
 					<td class="jidlo-popis">{$jidlo->popis}</td>
+					<td class="jidlo-alergeny is-hidden-mobile">
+						{foreach $jidlo->alergeny as $alergen}{$alergen->nazev}{sep}, {/sep}{/foreach}
+					</td>
 				</tr>
 			</table>
 

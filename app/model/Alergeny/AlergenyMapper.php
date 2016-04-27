@@ -3,6 +3,8 @@
 namespace App\Model;
 
 use Nextras\Orm;
+use Nextras\Orm\Entity\Reflection\PropertyMetadata;
+use Nextras\Orm\Mapper\IMapper;
 
 
 class AlergenyMapper extends Mapper
@@ -20,5 +22,6 @@ class AlergenyMapper extends Mapper
 		$ref->addMapping('id', 'alergenyID');
 		return $ref;
 	}
+
 
 }
