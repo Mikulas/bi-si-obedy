@@ -12,9 +12,8 @@ class HomepagePresenter extends BasePresenter
 	/** @var Model\RepositoryContainer @inject */
 	public $orm;
 
-	public function renderDefault()
+	public function actionDefault()
 	{
-		$this->template->anyVariable = 'any value';
 	}
 
 }

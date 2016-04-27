@@ -30,8 +30,13 @@ kdyby.console:
 
 services:
 	router: App\RouterFactory::createRouter(%https%)
-	migrations.dbal: Nextras\Migrations\Bridges\NextrasDbal\NextrasAdapter
-	migrations.driver: Nextras\Migrations\Drivers\PgSqlDriver
+	- Nextras\Migrations\Bridges\NextrasDbal\NextrasAdapter
+	- Nextras\Migrations\Drivers\PgSqlDriver
+	- App\Services\Authenticator
+	- App\Forms\FormFactory
+	- App\Forms\SignFormFactory
+	- App\Forms\RegistrationFormFactory(%domainsAllowedForRegistration%)
+#	- (%domainsAllowedForRegistration%)
 
 extensions:
 	nextras.dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension

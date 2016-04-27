@@ -9,6 +9,7 @@ use Nette\Security\User;
 
 class SignFormFactory extends Nette\Object
 {
+
 	/** @var FormFactory */
 	private $factory;
 
@@ -29,15 +30,15 @@ class SignFormFactory extends Nette\Object
 	public function create()
 	{
 		$form = $this->factory->create();
-		$form->addText('username', 'Username:')
-			->setRequired('Please enter your username.');
+		$form->addText('username', 'Uživatelské jméno:')
+			->setRequired('Zadejte prosím svoje uživatelské jméno.');
 
-		$form->addPassword('password', 'Password:')
-			->setRequired('Please enter your password.');
+		$form->addPassword('password', 'Heslo:')
+			->setRequired('Zadejte prosím svoje heslo.');
 
-		$form->addCheckbox('remember', 'Keep me signed in');
+		$form->addCheckbox('remember', 'Zapamatovat si mě');
 
-		$form->addSubmit('send', 'Sign in');
+		$form->addSubmit('send', 'Přihlásit se');
 
 		$form->onSuccess[] = array($this, 'formSucceeded');
 		return $form;
@@ -55,7 +56,7 @@ class SignFormFactory extends Nette\Object
 		try {
 			$this->user->login($values->username, $values->password);
 		} catch (Nette\Security\AuthenticationException $e) {
-			$form->addError('The username or password you entered is incorrect.');
+			$form->addError('Nezadali jste správně heslo.');
 		}
 	}
 

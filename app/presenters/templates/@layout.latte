@@ -35,22 +35,28 @@
 
 			<!-- Hamburger menu (on mobile) -->
 			<span class="header-toggle">
-			  <span></span>
-			  <span></span>
-			  <span></span>
+				<span></span>
+				<span></span>
+				<span></span>
 			</span>
 
 			<!-- Right side -->
 			<div class="header-right header-menu">
-			  <span class="header-item">
-				<a href="#">Nav item</a>
-			  </span>
-			  <span class="header-item">
-				<a href="#">Other nav item</a>
-			  </span>
-			  <span class="header-item">
-				<a class="button" href="#">Button</a>
-			  </span>
+				{if $user->loggedIn}
+					<span class="header-item">
+						<a href="#">{$uzivatelskyUcet->username}</a>
+					</span>
+					<span class="header-item">
+						<a class="button" n:href="//Sign:out">Odhlásit se</a>
+					</span>
+				{else}
+					<span class="header-item">
+						<a n:href="//Sign:in">Přihlášení</a>
+					</span>
+					<span class="header-item">
+						<a class="button" n:href="//Registration:default">Registrace</a>
+					</span>
+				{/if}
 			</div>
 		</div>
 	</header>

@@ -1,0 +1,11 @@
+<form n:name=$form>
+<div class="notification is-danger" n:foreach="$form->ownErrors as $error">
+	{$error}
+</div>
+
+<p n:foreach="$form->controls as $input" n:class="control, $input->required ? required">
+	{label $input /}
+	{input $input, class => "input"}
+	<span class=error n:ifcontent>{$input->error}</span>
+</p>
+</form>

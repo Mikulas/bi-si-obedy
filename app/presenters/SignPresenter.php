@@ -2,13 +2,14 @@
 
 namespace App\Presenters;
 
-use Nette;
 use App\Forms\SignFormFactory;
+use Nette;
 
 
 class SignPresenter extends BasePresenter
 {
 
+	/** @var SignFormFactory @inject */
 	public $factory;
 
 
@@ -20,7 +21,7 @@ class SignPresenter extends BasePresenter
 	{
 		$form = $this->factory->create();
 		$form->onSuccess[] = function ($form) {
-			$form->getPresenter()->redirect('Homepage:');
+			$this->redirect('Homepage:');
 		};
 		return $form;
 	}
@@ -28,7 +29,7 @@ class SignPresenter extends BasePresenter
 
 	public function actionOut()
 	{
-		$this->getUser()->logout();
+		$this->getUser()->logout(TRUE);
 	}
 
 }

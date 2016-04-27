@@ -5,5 +5,8 @@ parameters:
 		password:
 		dbname: bi-si-obedy
 
+	domainsAllowedForRegistration:
+		- example.com
+
 kdyby.console:
 	url: "https://obedy.dev"
