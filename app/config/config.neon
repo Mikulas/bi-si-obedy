@@ -1,26 +1,40 @@
-#
-# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
-# https://nette.org/security-warning
-#
 parameters:
+	https: off
 
+	dbal:
+		driver: pgsql
+		connectionTz: UTC
+		simpleStorageTz: UTC
 
 php:
-	date.timezone: Europe/Prague
-
+	date.timezone: UTC
 
 application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
 
-
 session:
 	expiration: 14 days
 
+nextras.dbal: %dbal%
+
+nextras.orm:
+	model: App\Model\RepositoryContainer
+
+nextras.migrations:
+	dir: %appDir%/../migrations
+
+kdyby.console:
+	commands: []
 
 services:
-	- App\Model\UserManager
-	- App\Forms\FormFactory
-	- App\Forms\SignFormFactory
-	router: App\RouterFactory::createRouter
+	router: App\RouterFactory::createRouter(%https%)
+	migrations.dbal: Nextras\Migrations\Bridges\NextrasDbal\NextrasAdapter
+	migrations.driver: Nextras\Migrations\Drivers\PgSqlDriver
+
+extensions:
+	nextras.dbal: Nextras\Dbal\Bridges\NetteDI\DbalExtension
+	nextras.orm: Nextras\Orm\Bridges\NetteDI\OrmExtension
+	nextras.migrations: Nextras\Migrations\Bridges\NetteDI\MigrationsExtension
+	kdyby.console: Kdyby\Console\DI\ConsoleExtension

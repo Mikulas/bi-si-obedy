@@ -1,6 +1,12 @@
 Obedy
 =====
 
+- wiki: https://trac.project.fit.cvut.cz/Obedy
+- svn s EA modelem: https://svn.project.fit.cvut.cz/Obedy
+- git s implementací: https://gitlab.fit.cvut.cz/bi-si1-obedy/obedy
+
+Aplikace je psaná částečně v češtině a to proto, aby odpovídala Enterprise Architect modelu.
+
 Application Setup
 -----------------
 

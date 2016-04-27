@@ -8,7 +8,7 @@ use App\Forms\SignFormFactory;
 
 class SignPresenter extends BasePresenter
 {
-	/** @var SignFormFactory @inject */
+
 	public $factory;
 
 

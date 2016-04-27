@@ -1,9 +1,9 @@
 parameters:
+	https: on
+	dbal:
+		username:
+		password:
+		dbname: bi-si-obedy
 
-
-database:
-	dsn: 'mysql:host=127.0.0.1;dbname=test'
-	user:
-	password:
-	options:
-		lazy: yes
+kdyby.console:
+	url: "https://obedy.dev"

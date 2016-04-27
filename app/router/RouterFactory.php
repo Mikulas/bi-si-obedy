@@ -11,10 +11,15 @@ class RouterFactory
 {
 
 	/**
+	 * @param bool $https
 	 * @return Nette\Application\IRouter
 	 */
-	public static function createRouter()
+	public static function createRouter($https)
 	{
+		if ($https) {
+			Route::$defaultFlags |= Route::SECURED;
+		}
+
 		$router = new RouteList;
 		$router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
 		return $router;

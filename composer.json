@@ -15,7 +15,7 @@
 		}
 	],
 	"require": {
-		"php": ">= 5.3.1",
+		"php": ">= 7.0.0",
 		"nette/application": "~2.3.6",
 		"nette/bootstrap": "~2.3.0",
 		"nette/caching": "~2.3.0",
@@ -31,7 +31,12 @@
 		"nette/utils": "~2.3.0",
 		"latte/latte": "~2.3.0",
 		"tracy/tracy": "~2.3.0",
-		"dg/adminer-custom": "~1.6"
+		"dg/adminer-custom": "~1.6",
+		"nextras/migrations": "^3.0",
+		"nextras/orm": "^2.0",
+		"nextras/dbal": "^2.0",
+		"kdyby/console": "~2.6",
+		"symfony/console": "~2.8"
 	},
 	"require-dev": {
 		"nette/tester": "~1.3"
