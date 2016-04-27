@@ -10,6 +10,9 @@
 
 			<table class="table">
 				<tr n:foreach="$jidelniListek->jidla as $jidlo">
+					<td class="jidlo-order" n:if="$user->loggedIn">
+						<a class="button is-small" n:href="order!, jidloId => $jidlo->id">objednat</a>
+					</td>
 					<td class="jidlo-nazev">{$jidlo->nazev}</td>
 					<td class="jidlo-cena">{$jidlo->cena}</td>
 					<td class="jidlo-popis">{$jidlo->popis}</td>

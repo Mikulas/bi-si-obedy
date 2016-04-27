@@ -1,5 +1,9 @@
 .header-item img {height: 40px; max-height: 40px;}
 
+.header-kredit {padding-left: .4em;}
+
+table .jidlo-order {width: 3em;}
+table .jidlo-order .button {margin-top: -2px; margin-bottom: -2px;}
 table .jidlo-cena {text-align: right;}
 table .jidlo-alergeny {text-align: right; opacity: 0;}
 table tr:hover .jidlo-alergeny {opacity: 1;}
