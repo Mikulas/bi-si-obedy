@@ -48,4 +48,39 @@ class UzivatelskyUcet extends Entity implements IIdentity
 		return [];
 	}
 
+
+	/**
+	 * @return NULL|Objednavka
+	 */
+	public function getObjednavkaForDay(DateTime $day)
+	{
+		foreach ($this->objednavky as $objednavka) {
+			foreach ($objednavka->jidla as $jidlo) {
+				if ($jidlo->jidelniListek->den->format('Y-m-d') === $day->format('Y-m-d')) {
+					return $objednavka;
+				}
+			}
+		}
+		return NULL;
+	}
+
+
+	/**
+	 * returns first meal in objednavka
+	 * @param DateTime $day
+	 * @return NULL|Jidlo
+	 */
+	public function getJidloForDay(DateTime $day)
+	{
+		$objednavka = $this->getObjednavkaForDay($day);
+		if (!$objednavka) {
+			return NULL;
+		}
+
+		foreach ($objednavka->jidla as $jidlo) {
+			return $jidlo;
+		}
+		return NULL;
+	}
+
 }

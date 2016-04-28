@@ -5,13 +5,23 @@
 <div class="content">
 	{foreach $days as $day => $jidelniListky}
 		<h3>{$day|date:'l n. j.'|cs}</h3>
+
+		{if $user->loggedIn}
+			{var $vybraneJidlo = $uzivatelskyUcet->getJidloForDay(new \DateTime($day))}
+		{/if}
+
 		{foreach $jidelniListky as $jidelniListek}
 			<h4>{$jidelniListek->restaurace->nazev} ({$jidelniListek->restaurace->kuchyne})</h4>
 
 			<table class="table">
 				<tr n:foreach="$jidelniListek->jidla as $jidlo">
 					<td class="jidlo-order" n:if="$user->loggedIn">
-						<a class="button is-small" n:href="order!, jidloId => $jidlo->id">objednat</a>
+						{if $jidlo === $vybraneJidlo}
+							{*<a class="button is-small is-success" href="#">vybráno</a>*}
+							<a class="button is-small is-danger" n:href="cancelOrder!, jidloId => $jidlo->id">zrušit</a>
+						{else}
+							<a class="button is-small" n:href="order!, jidloId => $jidlo->id">objednat</a>
+						{/if}
 					</td>
 					<td class="jidlo-nazev">{$jidlo->nazev}</td>
 					<td class="jidlo-cena">{$jidlo->cena}</td>
