@@ -5,3 +5,7 @@ vendor/*
 !.htaccess
 !web.config
 app/config/local.neon
+/keyrings/live/pubring.gpg~
+/keyrings/live/pubring.kbx~
+/keyrings/live/secring.gpg
+/app/config/local.prod.neon
