@@ -20,8 +20,12 @@ function symlink-shared {
 }
 
 
+step "decrypting files"
+/opt/blackbox/bin/blackbox_postdeploy
+
+
 step "creating local config"
-cp "config/config.prod.neon" "config/config.local.neon"
+cp "app/config/local.prod.neon" "app/config/local.neon"
 
 
 step "symlinking directories to persist between deploys"
@@ -32,17 +36,12 @@ step "installing composer dependencies"
 composer install
 
 
-step "building assets"
-mango install
-mango build
+step "running database migrations"
+php public/index.php migrations:continue
 
 
 step "swapping symlinks"
 stage-live "$DEPLOY_DIR" "$PROJECT_DIR"
-
-
-step "removing wp transient template roots"
-wp-clear-transient "obedy-mgw-cz"
 
 
 step "reloading php-fpm"
