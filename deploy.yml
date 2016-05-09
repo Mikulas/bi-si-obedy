@@ -1,0 +1,3 @@
+slack: "#deploy"
+remotes:
+    deploy/prod: git@shared-beta.mangoweb.org:obedy.mgw.cz.git
