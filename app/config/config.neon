@@ -2,6 +2,7 @@ parameters:
 	https: off
 
 	dbal:
+		host: localhost
 		driver: pgsql
 		connectionTz: UTC
 		simpleStorageTz: UTC
