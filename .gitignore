@@ -2,6 +2,7 @@ log/*
 temp/*
 !temp/.gitkeep
 vendor/*
+!vendor/adminer
 !.gitignore
 !.htaccess
 !web.config
