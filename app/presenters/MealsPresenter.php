@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Presenters;
-
 use App\Services\JidelniListekAggregator;
 use App\Services\SpravceObjednavek;
 use App\Services\SpravceObjednavekException;
 use Nette;
 use App\Model;
-
-
 class MealsPresenter extends BasePresenter
 {
 
@@ -22,10 +19,23 @@ class MealsPresenter extends BasePresenter
 	public $repositoryContainer;
 
 
-	public function renderList()
+	public function handleCancelOrder($jidloId)
 	{
-		$days = $this->aggregator->getAggregatedJidelniListkyByDate();
-		$this->template->days = $days;
+		$user = $this->getUserEntity();
+
+		$jidlo = $this->repositoryContainer->jidla->getById($jidloId);
+		try {
+			$den = $user->getObjednavkaForDay($jidlo->jidelniListek->den);
+			$this->spravceObjednavek->zrusObjednavku($den);
+			$this->flashMessage("Zrušena objednávka jídla {$jidlo->nazev}", 'success');
+
+		} catch (SpravceObjednavekException $e) {
+			$this->flashMessage($e->getMessage(), 'danger');
+		}
+
+
+		$this->repositoryContainer->flush();
+		$this->redirect('this');
 	}
 
 
@@ -44,28 +54,19 @@ class MealsPresenter extends BasePresenter
 	}
 
 
+	public function renderList()
+	{
+		$days = $this->aggregator->getAggregatedJidelniListkyByDate();
+		$this->template->days = $days;
+	}
+
+
 	public function handleOrder($jidloId)
 	{
 		$jidlo = $this->validateHandle($jidloId);
 		try {
 			$this->spravceObjednavek->zapisObjednavku($this->getUserEntity(), $jidlo);
 			$this->flashMessage("{$jidlo->nazev}, got it", 'success');
-
-		} catch (SpravceObjednavekException $e) {
-			$this->flashMessage($e->getMessage(), 'danger');
-		}
-
-		$this->repositoryContainer->flush();
-		$this->redirect('this');
-	}
-
-
-	public function handleCancelOrder($jidloId)
-	{
-		$jidlo = $this->validateHandle($jidloId);
-		try {
-			$this->spravceObjednavek->zrusObjednavku($this->getUserEntity()->getObjednavkaForDay($jidlo->jidelniListek->den));
-			$this->flashMessage("Zrušena objednávka jídla {$jidlo->nazev}", 'success');
 
 		} catch (SpravceObjednavekException $e) {
 			$this->flashMessage($e->getMessage(), 'danger');

@@ -1,34 +1,26 @@
 <?php
-
 namespace App\Services;
-
 use App\Model\UzivatelskeUctyRepository;
 use App\Model\UzivatelskyUcet;
 use Nette\Security\AuthenticationException;
 use Nette\Security\IAuthenticator;
 use Nette\Security\Identity;
 use Nette\Security\IIdentity;
-
-
 class Authenticator implements IAuthenticator
 {
 
 	/** @var UzivatelskeUctyRepository */
 	private $uzivatelskeUcty;
 
-
-	public function __construct(UzivatelskeUctyRepository $uzivatelskeUcty)
-	{
+	public function __construct(UzivatelskeUctyRepository $uzivatelskeUcty) {
 		$this->uzivatelskeUcty = $uzivatelskeUcty;
 	}
-
 
 	/**
 	 * @return IIdentity
 	 * @throws AuthenticationException
 	 */
-	public function authenticate(array $credentials)
-	{
+	public function authenticate(array $credentials) {
 		list($username, $password) = $credentials;
 
 		/** @var NULL|UzivatelskyUcet $uzivatelskyUcet */
