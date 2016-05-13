@@ -8,7 +8,7 @@ use Nextras\Orm;
 class UzivatelskeUctyMapper extends Mapper
 {
 
-	public function getTableName() : string
+	public function getTableName()
 	{
 		return 'uzivatelskyucet';
 	}

@@ -13,7 +13,7 @@ class ZamestnanciRepository extends Repository
 	 *
 	 * @return string[]
 	 */
-	public static function getEntityClassNames() : array
+	public static function getEntityClassNames()
 	{
 		return [
 			Zamestnanec::class,

@@ -8,7 +8,7 @@ use Nextras\Orm;
 class RestauraceMapper extends Mapper
 {
 
-	public function getTableName() : string
+	public function getTableName()
 	{
 		return 'restaurace';
 	}

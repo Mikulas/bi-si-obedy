@@ -10,7 +10,7 @@ use Nextras\Orm\Mapper\IMapper;
 class JidlaMapper extends Mapper
 {
 
-	public function getTableName() : string
+	public function getTableName()
 	{
 		return 'jidlo';
 	}

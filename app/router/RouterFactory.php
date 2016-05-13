@@ -14,7 +14,7 @@ class RouterFactory
 	 * @param bool $https
 	 * @return Nette\Application\IRouter
 	 */
-	public static function createRouter(bool $https) : Nette\Application\IRouter
+	public static function createRouter(bool $https)
 	{
 		if ($https) {
 			Route::$defaultFlags |= Route::SECURED;
